@@ -2,8 +2,8 @@ C4Context
     title System Context diagram for Internet Banking System
 
     Person(customerA, "Banking Customer A", "A customer of the bank, with personal bank accounts.")
-    Person(customerB, "Banking Customer B")
-    Person_Ext(customerC, "Banking Customer C", "desc")
+    Person(customerB, "Banking Customer B", "A customer of the bank, with personal bank accounts.")
+    Person_Ext(customerC, "Banking Customer C", "Description")
 
     System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
 
@@ -24,5 +24,6 @@ C4Context
     BiRel(SystemAA, SystemE, "Uses")
 
     UpdateElementStyle(customerA, $fontColor="red", $bgColor="lightgray", $borderColor="red")
+    UpdateElementStyle(customerB, $fontColor="red", $bgColor="lightgray", $borderColor="red")
     UpdateRelStyle(customerA, SystemAA, $textColor="blue", $lineColor="blue", $offsetX="5")
 
