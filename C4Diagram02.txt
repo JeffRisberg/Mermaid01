@@ -6,6 +6,7 @@ C4Context
     Person_Ext(customerC, "Banking Customer C", "Description")
 
     System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+    System(SystemBB, "Internet Lending System", "Allows customers to managed loans and mortgages.")
 
     Enterprise_Boundary(b1, "BankBoundary") {
 
@@ -14,14 +15,19 @@ C4Context
         System(SystemB, "Banking System B", "A system of the bank, with personal bank accounts. next line.")
       }
 
-      System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
-      SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
-
       SystemDb_Ext(SystemE, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+      SystemDb_Ext(SystemF, "Mainframe Lending System", "Stores all of the core banking information about loans, etc.")
+
+      System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+
+      SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
     }
 
     BiRel(customerA, SystemAA, "Uses")
+    BiRel(customerB, SystemBB, "Uses")
+
     BiRel(SystemAA, SystemE, "Uses")
+    BiRel(SystemBB, SystemF, "Uses")
 
     UpdateElementStyle(customerA, $fontColor="red", $bgColor="lightgray", $borderColor="red")
     UpdateElementStyle(customerB, $fontColor="red", $bgColor="lightgray", $borderColor="red")
