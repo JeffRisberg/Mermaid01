@@ -1,3 +1,5 @@
 ### Examples of using Mermaid
 
-use mermaid.live
+Use mermaid.live
+
+Load these files into the browser, manually.
